@@ -1,0 +1,33 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    
+    public function up(): void
+    {
+         Schema::create('table_matakuliah', function (Blueprint $table) {
+            $table->id();
+            $table->string('Jurusan_id');
+            $table->string('Kode_mk')->unique();
+            $table->string('Nama_mk')->unique();
+            $table->string('sks');
+            $table->string('dosen_id');
+            $table->timestamps();
+         });    
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        //
+    }
+};
